@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--Tool Description-->
+<div class="container">
+    <div class="row">
+        <div class="box second">
+            <div id="sectitle">
+                <h3>Tool Description</h3>
+                <div id="paragraphtitle">
+                    <p>The <strong>BMW Used Car Price Predictor</strong> uses predictive analytics to determine the price of a used bmw car for years upto 2020. The predictive model was trained
+                        on bmw used car data found in <a href="https://github.com/datacamp/careerhub-data" target="_blank">DataCamp's Career Hub</a> repository on GitHub. The data consists of 8 variables
+                        including model, transmission, fuel type, tax, miles per gallon (mpg), mileage, engine size, manifacture year and price.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<!--Price Prediction Input-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="box second">
+                <div>
+                    <h3>
+                        Please Select or Enter values for the dropdowns and entryfields!
+                    </h3>
+                    <form method="POST">
+                        {{ form.hidden_tag() }}
+
+                        <p>{{ form.model.label }}
+                            {{ form.model() }}
+                        </p>
+                        <p>{{ form.transmission.label }}
+                            {{ form.transmission() }}</p>
+                        <p>{{ form.fueltype.label }}
+                            {{ form.fueltype() }}</p>
+                        <p>{{ form.mileage.label }}
+                            {{ form.mileage() }}</p>
+                        <p>{{ form.tax.label }}
+                            {{ form.tax() }}</p>
+                        <p>{{ form.mpg.label }}
+                            {{ form.mpg() }}</p>
+                        <p>{{ form.engine_size.label }}
+                            {{ form.engine_size() }}</p>
+                        <p>{{ form.year.label }}
+                            {{ form.year() }}</p>
+                        <p>{{ form.submit() }}</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Prediction Output-->
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="box third">
+                <div>
+                    <h4>BMW with above specifications will cost: ${{ pred_results[0] }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
