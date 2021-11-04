@@ -1,10 +1,11 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, flash, render_template, redirect, request
 from wtforms import meta
 
 import os
 import pandas as pd
 import numpy as np
 from form import CarSalesVars, df_cols
+
 
 # import machine learning modules
 from sklearn.model_selection import train_test_split

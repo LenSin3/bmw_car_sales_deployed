@@ -1,7 +1,8 @@
 from pandas.core.frame import DataFrame
 import pandas as pd
-from wtforms.validators import ValidationError, InputRequired, DataRequired
+from wtforms.validators import ValidationError, InputRequired, DataRequired 
 from flask_wtf import FlaskForm
+from flask import flash
 import utils
 
 def get_unique_vals(df, col):
@@ -34,4 +35,13 @@ class MaxYear(object):
         yr = field.data
         if yr > self.max_yr:
             raise ValidationError(self.message)
+
+def flash_errors(form):
+    """Flashes form errors"""
+    for field, errors in form.errors.items():
+        for error in errors:
+            flash(u"Error in the %s field - %s" % (
+                getattr(form, field).label.text,
+                error
+            ), 'error')
         
