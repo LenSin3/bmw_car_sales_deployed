@@ -23,11 +23,11 @@ class CarSalesVars(FlaskForm):
     model = SelectField('Model', choices=model, validators=[DataRequired()])
     transmission = SelectField('Transmission', choices=transmission, validators=[DataRequired()])
     fueltype = SelectField('Fuel Type', choices=fueltype, validators=[DataRequired()])
-    mileage = DecimalField('Mileage', validators=[DataRequired(), NumberRange(min=0, message="Mileage must be positive number!")])
-    tax = DecimalField('Tax', validators=[DataRequired(message="Please enter a numeric value for Tax!"), NumberRange(min=0, message="Tax must be positive number!")])
-    mpg = DecimalField('MPG', validators=[DataRequired(), NumberRange(min=0, message="MPG must be numeric!")])
-    engine_size = DecimalField('Engine Size', validators=[DataRequired(), NumberRange(min=0, message="Engine Size must be numeric!")])
-    year = DecimalField('Year', validators=[DataRequired(), NumberRange(max=2020, message="Year must not be greater than 2020!")])
+    mileage = DecimalField('Mileage', validators=[DataRequired("Please enter a numeric value for Mileage!"), NumberRange(min=0, message="Mileage must be a positive number!")])
+    tax = DecimalField('Tax', validators=[DataRequired(message="Please enter a numeric value for Tax!"), NumberRange(min=0, message="Tax must be a positive number!")])
+    mpg = DecimalField('MPG', validators=[DataRequired("Please enter a numeric value for MPG!"), NumberRange(min=0, message="MPG must be a positive number!")])
+    engine_size = DecimalField('Engine Size', validators=[DataRequired("Please enter a numeric value for Engine Size!"), NumberRange(min=0, message="Engine Size must be a positive number!")])
+    year = DecimalField('Year', validators=[DataRequired("Please enter a numeric value for Year!"), NumberRange(min=0, max=2020, message="Year can not be negative and must not be greater than 2020!")])
     
 
     submit = SubmitField('Get Price')
