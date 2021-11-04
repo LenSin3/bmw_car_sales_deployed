@@ -1,8 +1,8 @@
-
+python==3.6.12
 Flask==2.0.2
 Flask-WTF==0.15.1
 importlib-metadata==4.8.1
-Jinja2==2.11.2
+Jinja2>=3.0.0
 joblib==1.0.0
 numpy==1.19.2
 pandas==1.1.5
