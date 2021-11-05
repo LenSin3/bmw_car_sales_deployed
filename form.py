@@ -9,12 +9,17 @@ import helpers
 from helpers import MaxYear
 
 # import data
-df = pd.read_csv('data/bmw_clean.csv')
-df_cols = df.columns.tolist()
+# df = pd.read_csv('data/bmw_clean.csv')
+# df_cols = df.columns.tolist()
 #list to hold unique values
-model = helpers.get_unique_vals(df, 'model')
-transmission = helpers.get_unique_vals(df, 'transmission')
-fueltype = helpers.get_unique_vals(df, 'fuelType')
+# model = helpers.get_unique_vals(df, 'model')
+model = ['5 Series', '6 Series', '1 Series', '7 Series', '2 Series',
+       '4 Series', 'X3', '3 Series', 'X5', 'X4', 'i3', 'X1', 'M4', 'X2',
+       'X6', '8 Series', 'Z4', 'X7', 'M5', 'i8', 'M2', 'M3', 'M6', 'Z3']
+# transmission = helpers.get_unique_vals(df, 'transmission')
+transmission = ['Automatic', 'Manual', 'Semi-Auto']
+# fueltype = helpers.get_unique_vals(df, 'fuelType')
+fueltype = ['Diesel', 'Petrol', 'Other', 'Hybrid', 'Electric']
 
 # instantiate MaxYear
 max_yr = MaxYear()
