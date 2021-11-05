@@ -4,7 +4,7 @@ from wtforms import meta
 import os
 import pandas as pd
 import numpy as np
-from form import CarSalesVars, df_cols
+from form import CarSalesVars
 
 
 # import machine learning modules
